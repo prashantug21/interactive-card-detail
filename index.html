@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+
+<body>
+  <main class="direct">
+    <div class="images">
+      <div class="cardback">
+        <img src="./images/bg-card-back.png">
+        <div class="backtxt" id="egcvc">000</div>
+      </div>
+      <div class="cardfront">
+        <img src="./images/bg-card-front.png" class="frontimg">
+        <div class="details">
+          <img src="./images/card-logo.svg" class="logo">
+          <h3 class="egnumber" id="egnumber"> 0000 0000 0000 0000</h3>
+          <div class="horizontal">
+            <p class="egname" id="egname"> Jane Appleseed</p>
+            <p class="eg-expdate" id="egdate"><spam id="egMonth">00</spam>/<spam id="egYear">00</spam></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right" id="right">
+      <form onsubmit="return checkEmpty(event)" id="form">
+        <div class="fill">
+          <label for="cardholder" class="name">CARDHOLDER NAME</label><br>
+          <input id="cardholder" class="cardholder" placeholder="e.g. Jane Appleseed" onkeyup="change('cardholder','egname','Jane Appleseed')"><br>
+          <p class="blank name" id="blank1" style="display:none;">Can't be blank</p>
+          <p class="format name" id="format1" style="display:none">Wrong format, text only</p>
+        </div>
+        <div class="fill">
+          <label for="cardnumber" class="cardnumber" >CARD NUMBER</label><br>
+          <input id="cardnumber" class="cardnumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="20" onkeyup="number(event)"><br>
+          <p class="blank number" id="blank2" style="display:none">Can't be blank</p>
+          <p class="format number" id="format2" style="display:none">Wrong format, numbers only</p>
+        </div>
+        <div class="fill">
+          <div class="hori datecvc">
+            <div class="date">
+              <label for="expdate" class="expdate">EXP. DATE(MM/YY)</label><br>
+              <input id="expdate-month" class="expdate month" placeholder="MM" maxlength="2" onkeyup="change('expdate-month','egMonth','00')">
+              <input id="expdate-year" class="expdate year" placeholder="YY" maxlength="2" onkeyup="change('expdate-year','egYear','00')">
+              <p class="blank year" id="blank5" style="display:none">Can't be blank</p>
+              <p class="format year" id="format5" style="display:none">Wrong format, numbers only</p>
+              <p class="blank year" id="blank3" style="display:none">Can't be blank</p>
+              <p class="format year" id="format3" style="display:none">Wrong format, numbers only</p>
+            </div>
+            <div class="container">
+              <label for="cvc" class="cvc">CVC</label><br>
+              <input id="cvc" class="cvc" placeholder="e.g. 123" maxlength="3" onkeyup="change('cvc','egcvc','000')"><br>
+              <p class="blank cvccheck" id="blank4" style="display:none">Can't be blank</p>
+              <p class="format cvcheck" id="format4" style="display:none">Wrong format, numbers only</p>
+            </div>
+          </div>
+        </div>
+        <button class="confirm">Confirm</button>
+      </form>
+      <div class="completed" id="completed">
+        <img src="./images/icon-complete.svg" alt="Thank You" class="tick">
+        <h2 class="thanks">THANK YOU!</h2>
+        <p class="message">We've added your card details</p>
+        <button class="continue" onclick="window.location.href='index.html'">Continue</button>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="Script.js"></script>
+</body>
+
+</html>
