@@ -2,10 +2,10 @@ let cardnum = document.getElementById('cardnumber');
 cardnum.addEventListener('keydown', (event) => {
     let str = cardnum.value;
     let key = event.key;
-    if (str.length % 5 == 0 && key != 'Backspace' && str.length < 20) {
+    if (str.length % 5 == 0 && key != 'Backspace' && key!='Delete' && str.length < 20) {
         str += ' ';
     }
-    if (key == 'Backspace') {
+    if (key == 'Backspace' || key=='Delete') {
         str = str.substring(0, str.length);
         if (str.length % 5 == 1) {
             str = str.substring(0, str.length);
